@@ -19,4 +19,8 @@ export class ValidadoresService {
 
     return {noHerrera: null};
   }
+
+  passwordsIguales(){
+
+  }
 }
