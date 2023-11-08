@@ -11,9 +11,9 @@
         <input class="form-control"
                type="text"
                name="nombre"
+               placeholder="Nombre"
                [class.is-invalid]="nombre.invalid && nombre.touched"
                [ngModel]="usuario.nombre"
-               placeholder="Nombre"
                required
                minlength="5"
                #nombre="ngModel">
@@ -26,7 +26,15 @@
 
         <input class="form-control"
                type="text"
-               placeholder="Apellido">
+               name="apellido"
+               placeholder="Apellido"
+               [class.is-invalid]="apellido.invalid && apellido.touched"
+               [ngModel]="usuario.apellido"
+               ngModel
+               required
+               minlength="5"
+               #apellido="ngModel"
+               required>
       </div>
     </div>
 
@@ -38,9 +46,9 @@
 
       <input class="form-control"
              type="email"
-             [class.is-invalid]="correo.invalid && correo.touched"
-             ngModel
              name="correo"
+             [class.is-invalid]="correo.invalid && correo.touched"
+             [ngModel]="usuario.correo"
              placeholder="Correo electrónico"
              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
              #correo="ngModel">
