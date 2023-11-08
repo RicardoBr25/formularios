@@ -80,21 +80,27 @@
             <td>
               <input class="form-control" type="text" [formControlName] = "i">
             </td>
-            <td> <button class="btn btn-danger">Borrar</button></td>
+            <td> <button class="btn btn-danger"
+               (click)="borrarPasatiempos(i)">
+              Borrar
+            </button></td>
           </tr>
         </tbody>
       </table>
 
-      <button class="btn btn-primary mt-3 mb-5 btn-block">+ Agregar</button>
-    </div>
-  </div>
-
+          <button
+          type="button"
+          class="btn btn-outline-primary btn-block"
+          (click)="agregarPasatiempo()">
+            + Agregar
+          </button>
+        </div>
+      </div>
 
   <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>
     <div class="input-group col">
-      <button type="submit" class="btn btn-outline-primary btn-block"
-      type="button">
+      <button type="submit" class="btn btn-outline-primary btn-block">
         Guardar
       </button>
     </div>
