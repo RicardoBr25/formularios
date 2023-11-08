@@ -8,11 +8,8 @@
       <label class="col-2 col-form-label">Nombre</label>
       <div class="col">
 
-        <input class="form-control"
-               type="text"
-               placeholder="Nombre"
-               formControlName="nombre"
-               [class.is-invalid]="nombreNoValido">
+        <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre"
+          [class.is-invalid]="nombreNoValido">
         <small *ngIf="nombreNoValido" class="text-danger">
           Ingrese 5 letras
         </small>
@@ -23,13 +20,10 @@
       <label class="col-2 col-form-label">Apellido</label>
       <div class="col">
 
-        <input class="form-control"
-               type="text"
-               placeholder="Apellido"
-               formControlName="apellido"
-               [class.is-invalid]="apellidoNoValido">
+        <input class="form-control" type="text" placeholder="Apellido" formControlName="apellido"
+          [class.is-invalid]="apellidoNoValido">
         <small *ngIf="apellidoNoValido" class="text-danger">
-              Ingrese el apellido
+          Ingrese el apellido
         </small>
       </div>
     </div>
@@ -40,13 +34,10 @@
     <label class="col-2 col-form-label">Correo</label>
     <div class="col">
 
-      <input class="form-control"
-             type="email"
-             placeholder="Correo electrónico"
-             formControlName="correo"
-             [class.is-invalid]="correoNoValido">
+      <input class="form-control" type="email" placeholder="Correo electrónico" formControlName="correo"
+        [class.is-invalid]="correoNoValido">
       <small *ngIf="correoNoValido" class="text-danger">
-           Ingrese el correo
+        Ingrese el correo
       </small>
     </div>
   </div>
@@ -58,33 +49,52 @@
 
       <div class="col">
 
-        <input type="text"
-               class="form-control"
-               placeholder="Distrito"
-               formControlName="distrito"
-               [class.is-invalid]="distritoNoValido">
+        <input type="text" class="form-control" placeholder="Distrito" formControlName="distrito"
+          [class.is-invalid]="distritoNoValido">
 
       </div>
 
       <div class="col">
 
-        <input type="text"
-               class="form-control"
-               placeholder="Ciudad"
-               formControlName="ciudad"
-               [class.is-invalid]="ciudadNoValido">
+        <input type="text" class="form-control" placeholder="Ciudad" formControlName="ciudad"
+          [class.is-invalid]="ciudadNoValido">
 
       </div>
 
     </div>
   </div>
 
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Id</th>
+            <th>Pasatiempo</th>
+            <th>Borrar</th>
+          </tr>
+        </thead>
+        <tbody formArrayName="pasatiempos">
+          <tr *ngFor="let control of pasatiempos.controls; let i = index ">
+            <td>{{ i + 1}}</td>
+            <td>
+              <input class="form-control" type="text" [formControlName] = "i">
+            </td>
+            <td> <button class="btn btn-danger">Borrar</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class="btn btn-primary mt-3 mb-5 btn-block">+ Agregar</button>
+    </div>
+  </div>
 
 
   <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>
     <div class="input-group col">
-      <button type="submit" class="btn btn-outline-primary btn-block">
+      <button type="submit" class="btn btn-outline-primary btn-block"
+      type="button">
         Guardar
       </button>
     </div>
@@ -94,7 +104,7 @@
 
 
 
-<hr> 
+<hr>
 <pre>
   Estado del formulario: {{ forma.valid }}
   <br>
