@@ -15,10 +15,10 @@ export class PaisService {
       
       return this.http.get('https://restcountries.com/v3.1/lang/spanish')
         .pipe(
-          map( ( resp:any = []) => {
-            return resp.map( (pais:any) => ({ nombre: pais.name, codigo: pais.cca3 }) 
+          map( ( resp:any = []) => 
+              resp.map( (pais:any) => ({ nombre: pais.name.common, codigo: pais.cca3 }) 
             )
-          })
+          )
          );
 
 
